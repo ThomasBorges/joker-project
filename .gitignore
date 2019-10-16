@@ -105,3 +105,7 @@ venv.bak/
 
 # credentials
 credentials/*.json
+
+#vscode
+.vscode
+.vscode/*
