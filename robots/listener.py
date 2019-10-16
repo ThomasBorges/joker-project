@@ -2,6 +2,7 @@ from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 from datetime import datetime
+from saver import Saver
 import json
 
 
@@ -12,12 +13,13 @@ class Listener(StreamListener):
         self.consumer_secret = apiKeys['consumer_secret']
         self.access_token = apiKeys['access_token']
         self.access_token_secret = apiKeys['access_token_secret']
-        print("OK")
+
+        self.savetweets = Saver('rtTweets')        
+        self.keywords = ['Joker', 'Coringa', 'Joker Movie', 'Joker Joaquin Phoenix', 'Joaquin Phoenix']
 
     def set_authentication(self):
         self.auth = OAuthHandler(self.consumer_key, self.consumer_secret)
         self.auth.set_access_token(self.access_token, self.access_token_secret)
-        print("OK!")
 
     def on_data(self, dados):
         tweet = json.loads(dados)
@@ -25,7 +27,11 @@ class Listener(StreamListener):
         id_str = tweet["id_str"]
         text = tweet["text"]
         obj = {"created_at":created_at,"id_str":id_str,"text":text,}
-        tweetind = col.insert_one(obj).inserted_id
+        self.savetweets.columnInsertTweets(obj)
         return True
+
+    def start_listening(self):
+        self.myStream = Stream(self.auth, listener = self)
+        self.myStream.filter(track=self.keywords)
 
 
