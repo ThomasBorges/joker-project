@@ -3,8 +3,14 @@ from listener import Listener
 
 with open('credentials/twitter-api.json') as json_file:
     #Open credentials and insert api keys
-    apiKeys = json.load(json_file)
+    twitter_apiKeys = json.load(json_file)
 
 
-tweet_listener = Listener(apiKeys)  
-tweet_listener.set_authentication()
+def start_to_listen():
+    print("\n ===== Hey there, I'll start to listen to tweets about Joker ===== \n")
+    print(" Press ctrl+C when you want me to stop!! ")
+    mylistener = Listener(twitter_apiKeys)  
+    mylistener.set_authentication()
+    mylistener.start_listening()
+
+
