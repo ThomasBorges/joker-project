@@ -107,4 +107,4 @@ venv.bak/
 credentials/*.json
 
 #vscode
-joker-project/.vscode
+.vscode
