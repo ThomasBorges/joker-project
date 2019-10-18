@@ -1,5 +1,6 @@
 import json
 from listener import Listener
+from searcher import Searcher
 
 with open('credentials/twitter-api.json') as json_file:
     #Open credentials and insert api keys
@@ -13,4 +14,9 @@ def start_to_listen():
     mylistener.set_authentication()
     mylistener.start_listening()
 
+
+# def start_to_search():
+#     mySearcher = Searcher(twitter_apiKeys)
+#     mySearcher.set_authentication()
+#     mySearcher.start_to_search()
 
