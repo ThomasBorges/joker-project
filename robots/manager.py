@@ -1,6 +1,8 @@
 import json
+import pandas as pd
 from listener import Listener
-from searcher import Searcher
+from saver import Saver
+from preprocessor import Preprocessor
 
 with open('credentials/twitter-api.json') as json_file:
     #Open credentials and insert api keys
@@ -20,3 +22,12 @@ def start_to_listen():
 #     mySearcher.set_authentication()
 #     mySearcher.start_to_search()
 
+def start_to_preprocess():
+    newSaver = Saver()
+    pp = Preprocessor()
+    data = pd.DataFrame(list(newSaver.getCollectionRealTimeTweets()))
+    pp.clean_frame(data)
+    #use this if you want to create a csv file to visualize
+    # with open('tmpcsv.csv', 'w') as tmpcsv:
+    # tmpcsv.writelines(data.to_csv())
+    

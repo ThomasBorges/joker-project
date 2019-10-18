@@ -7,7 +7,7 @@ class Saver():
         self.db = self.client.jokerdb
 
         #columns
-        self.coll_rt_Tweets = self.db.realTimeTweets2
+        self.coll_rt_Tweets = self.db.realTimeTweets
         self.coll_s_Tweets = self.db.searchedTweets
         self.coll_clean_tweets = self.db.cleanTweets
         
@@ -22,5 +22,5 @@ class Saver():
        
 
     def getCollectionRealTimeTweets(self):
-        return self.db.get_collection('realTimeTweets2').find({})
+        return self.db.get_collection('realTimeTweets').find({})
         
