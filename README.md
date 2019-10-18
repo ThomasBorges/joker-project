@@ -1,2 +1,2 @@
 # joker-project
-Visualization and understanding about feelings towards Joker's movie.
+Using NLP to understand feelings about Joker's new movie
