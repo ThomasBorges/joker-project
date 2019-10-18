@@ -107,4 +107,8 @@ venv.bak/
 credentials/*.json
 
 #vscode
-.vscode
+.vscodegit 
+
+#searcher/language-detector
+robots/searcher.py
+robots/languagedetector.py
