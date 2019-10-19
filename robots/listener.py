@@ -19,8 +19,8 @@ class Listener(StreamListener):
         self.access_token_secret = apiKeys['access_token_secret']
 
         self.savetweets = Saver()        
-        self.listen_keywords = ['Joker', 'Coringa', 'Joker Movie', 'Joker Joaquin Phoenix', 'Joaquin Phoenix']
-        self.languages = ['en','pt']
+        self.listen_keywords = ['Joker', 'Coringa', 'Joker Movie', 'Joker Joaquin Phoenix', 'Joaquin Phoenix'] #set the words to filter here
+        self.languages = ['en','pt'] #set the language here
 
 
     def set_authentication(self):
@@ -33,7 +33,7 @@ class Listener(StreamListener):
         id_str = tweet["id_str"]
         text = tweet["text"]
         obj = {"created_at":created_at,"id_str":id_str,"text":text,}
-        self.savetweets.setCollectionRealTimeTweets(obj)
+        self.savetweets.set_collection_real_time_tweets(obj)
         return True
 
     def start_listening(self):

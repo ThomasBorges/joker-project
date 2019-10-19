@@ -7,20 +7,24 @@ class Saver():
         self.db = self.client.jokerdb
 
         #columns
-        self.coll_rt_Tweets = self.db.realTimeTweets2
-        self.coll_s_Tweets = self.db.searchedTweets
-        self.coll_clean_tweets = self.db.cleanTweets
+        self.coll_rt_tweets = self.db.realTimeTweets
+        self.coll_s_tweets = self.db.searchedTweets
+        self.coll_clean_tweets = self.db.cleanTweets2
+        self.coll_analyzed_tweets = self.db.analyTweets
         
-    def setCollectionRealTimeTweets(self, data):
-        self.coll_rt_Tweets.insert_one(data).inserted_id
+    def set_collection_real_time_tweets(self, data):
+        self.coll_rt_tweets.insert_one(data).inserted_id
 
-    # def columnInsertSearchedTweets(self, obj):
-    #     self.columns_s_Tweets.insert_one(obj).inserted_id
+    # def set_coll_seacherd_tweets(self, obj):
+    #     self.columns_s_tweets.insert_one(obj).inserted_id
 
-    def setCollectionCleanTweets(self, data):
+    def set_collection_clean_tweets(self, data):
         self.coll_clean_tweets.insert_one(data).inserted_id
        
+    def set_collection_analyzed_tweets(self, data):
+        self.coll_analyzed_tweets.insert_one(data).inserted_id
 
-    def getCollectionRealTimeTweets(self):
-        return self.db.get_collection('realTimeTweets2').find({})
+    def get_collection(self, collection):
+        return self.db.get_collection(collection).find({})
+
         
