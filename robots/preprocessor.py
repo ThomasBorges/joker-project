@@ -1,7 +1,7 @@
-import pandas as pd 
-import re 
 from nltk.tokenize import WordPunctTokenizer
 from saver import Saver
+import pandas as pd 
+import re 
 
 
 class Preprocessor():
@@ -22,19 +22,20 @@ class Preprocessor():
             rows['text'] = clean_tweet
         
         # clean_data = data.drop(columns=['id_str']) //can use this to drop specific column
-        self.clean_data_to_saver(data)
+        self.remove_duplicates_and_save(data)
 
 
-    def clean_data_to_saver(self, clean_data):
-    
+    def remove_duplicates_and_save(self, clean_data):
+        check_list = []
         for index, rows in clean_data.iterrows():
-            data_dict = {
-                'id_str':rows['id_str'],
-                'created_at':rows['created_at'],
-                'text':rows['text']
-            }
-
-            self.saver.setCollectionCleanTweets(data_dict)
+            if rows['text'] not in check_list: 
+                check_list.append(rows['text'])
+                data_dict = {
+                    'id_str':rows['id_str'],
+                    'created_at':rows['created_at'],
+                    'text':rows['text']
+                }
+                self.saver.set_collection_clean_tweets(data_dict)
 
 
 

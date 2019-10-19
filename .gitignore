@@ -112,3 +112,7 @@ credentials/*.json
 #searcher/language-detector
 robots/searcher.py
 robots/languagedetector.py
+
+#tmps
+tmpcsv.csv
+tmpjson.json
