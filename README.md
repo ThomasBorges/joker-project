@@ -6,7 +6,7 @@
 This project started as a playfull way to understand the process of interacting with Apis, collect data, clean it, use natural language process to label it,
 then plot in a way that we can have some conclusions about the data. It endend as a program that automatic collect, clean and language process the data.
 
-![](../readme_page/joker.gif)
+![](readme_page/joker.gif)
 
 ## Installation
 Linux Ubuntu 18.04:
