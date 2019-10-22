@@ -10,22 +10,24 @@ class Preprocessor():
 
 
     def clean_frame(self, data):
+        print('\n---Cleaning user and links---\n')
 
         for index, rows in data.iterrows():
             user_removed = re.sub(r'@[A-Za-z0-9]+','',rows['text'])
             link_removed = re.sub('https?://[A-Za-z0-9./]+','',user_removed)
-            # number_removed = re.sub('[^a-zA-Z]', ' ', link_removed) //can use this to remove punctuation
+            # number_removed = re.sub('[^a-zA-Z]', ' ', link_removed) //you can use this to remove punctuation
             lower_case_tweet= link_removed.lower()
             tok = WordPunctTokenizer()
             words = tok.tokenize(lower_case_tweet)
             clean_tweet = (' '.join(words)).strip()
             rows['text'] = clean_tweet
         
-        # clean_data = data.drop(columns=['id_str']) //can use this to drop specific column
+        # clean_data = data.drop(columns=['id_str']) //you can use this to drop specific column
         self.remove_duplicates_and_save(data)
 
 
     def remove_duplicates_and_save(self, clean_data):
+        print('---Removing duplicates and saving in mongo---\n')
         check_list = []
         for index, rows in clean_data.iterrows():
             if rows['text'] not in check_list: 
