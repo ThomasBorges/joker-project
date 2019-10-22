@@ -12,15 +12,26 @@ then plot in a way that we can have some conclusions about the data. It endend a
 Linux Ubuntu 18.04:
 
 Clone this repository in your machine;
+
 Install [miniconda3][miniconda3] latest version;
+
 Install [mongodb][mongo];
+
 Create a conda's virtual enviroment in your pc;
+
 Install the dependencies;
+
 Create an account on google cloud and twitter's development platform;
+
 At [twitter's development][devtwitt], activate the apikeys, and copy paste on /crendetials;
-At [google cloud][googlec], activate the cloud natural language API and create a service account, after that download the .json and paste it on /credentials;
-Run in your console ```sh python3 index.py ```
+
+At [google cloud][googlec], activate the cloud natural language API and create a service account,
+	after that, download the .json and paste it on /credentials;
+	
+Run in your console ```sh python3 index.py ``` ;
+
 Rhoose the robot you want to use;
+
 When the robot is finished run  ```sh python3 index.py ``` again and select other robot.
 
 PS: Not tested on Windows and OS X but it may work. The possible problem could be the os.env at the analyser robot.
@@ -32,11 +43,17 @@ Detailed instructions can be found below.
 You can use this code to make a sentiment analyses towards any new media, a new game, new movie, new series, new product.
 
 I called robot, each part of the program:
+
     -Manager coordenates the calls;
+	
     -Listener is responsable for collecting the tweets;
+	
     -Saver is responsable for interacting with mongodb;
+	
     -Preprocessor is responsable for cleaning the tweets;
+	
     -Analyser is responsable for request google's api;
+	
     -Posprocessor is responsable to deliver the final csv.
 
 Feel free to suggest improvements, especially at the preprocessor, cause you will not get only the tweets you want.
@@ -47,7 +64,7 @@ After the final csv is complete, you can use any tool to plot your data. I choos
 
 See how beautiful it became =]
 
-![](../readme_page/datastudio-Joker.jpeg)
+![](readme_page/datastudio-Joker.jpeg)
 
 _You can acess to interact with the plots [here][datastudio]._
 
