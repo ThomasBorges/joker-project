@@ -22,12 +22,12 @@ class Analyser():
    
     def sentiment_analyses(self, data):
         invalid_language=0
-        #requestmin=0
+        #requestmin=0 // I'm not sure if this is needed, the intention is to not surpass the requests permited by google
         #requestday=0
 
-        print('=== It can take a while, so grab a coffee! ===')
+        print('=== It can take a while, so grab a cup of coffee! ===')
         for i, row in data.iterrows():
-            #if requestday == 800000: break   // don't know if this is
+            #if requestday == 800000: break   
             # if requestmin == 600: 
             #     time.sleep(61)
             #     requestmin = 0
@@ -50,5 +50,6 @@ class Analyser():
                 'score':sentiment.score,
                 'magnitude':sentiment.magnitude
             }
-            print(invalid_language)
             self.saver.set_collection_analyzed_tweets(analy_data)
+
+        print("quantity of invalid language: {}".format(invalid_language))

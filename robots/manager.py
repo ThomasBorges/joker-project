@@ -1,10 +1,12 @@
 from preprocessor import Preprocessor
+from posprocessor import Posprocessor
 from analyser import Analyser
 from listener import Listener
 from saver import Saver
 import pandas as pd
 import json
 
+newSaver = Saver()
 
 def start_to_listen():
     with open('credentials/twitter-api.json') as json_file:
@@ -18,13 +20,7 @@ def start_to_listen():
     mylistener.start_listening()
 
 
-# def start_to_search():
-#     mySearcher = Searcher(twitter_apiKeys)
-#     mySearcher.set_authentication()
-#     mySearcher.start_to_search()
-
 def start_to_preprocess():
-    newSaver = Saver()
     pp = Preprocessor()
     data = pd.DataFrame(list(newSaver.get_collection('realTimeTweets')))
     pp.clean_frame(data)
@@ -35,8 +31,12 @@ def start_to_preprocess():
 
 
 def start_to_analyse():
-    newSaver = Saver()
     an = Analyser()
     data = pd.DataFrame(list(newSaver.get_collection('cleanTweets')))
     an.sentiment_analyses(data)
+
+def start_to_posprocess():
+    pp = Posprocessor()
+    pp.start_to_posprocess()
+    
 

@@ -1,24 +1,39 @@
 import sys
+import os
 sys.path.append('../joker-project/robots')
 
 import manager as mg
 
 
-''' Uncomment the one you want to use '''
+if __name__ == "__main__":
+    print('\n === Hey there, lets start data hacking shall we =] ===\n')
+    print('Select the robot you want to use: \n')
+    print('1- listener\n')
+    print('2- preprocessor\n')
+    print('3- analyser\n')
+    print('4- posprocessor\n')
+    print('9- exit\n')
 
-##to start the listener, use this:
-# try:
-#     mg.start_to_listen()
-# except KeyboardInterrupt:
-#     print(' Byebye!')
+    option = int(input())
+
+    if option == 1:
+        try:
+            mg.start_to_listen()
+        except KeyboardInterrupt:
+            print(' Byebye!')
 
 
-##to start preprocessing, use this:
-#mg.start_to_preprocess
+    elif option == 2:
+        mg.start_to_preprocess()
 
-##to start the sentiment analyses, use this:
-#mg.start_to_analyse
+    elif option == 3:
+        mg.start_to_analyse()
 
+    elif option == 4:
+        mg.start_to_posprocess()
+
+    elif option == 9:
+        os._exit
 
 
 

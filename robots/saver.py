@@ -4,12 +4,12 @@ class Saver():
 
     def __init__(self):
         self.client = MongoClient('localhost', 27017)
-        self.db = self.client.jokerdb
+        self.db = self.client.testejoker
 
         #columns
         self.coll_rt_tweets = self.db.realTimeTweets
         self.coll_s_tweets = self.db.searchedTweets
-        self.coll_clean_tweets = self.db.cleanTweets2
+        self.coll_clean_tweets = self.db.cleanTweets
         self.coll_analyzed_tweets = self.db.analyTweets
         
     def set_collection_real_time_tweets(self, data):
