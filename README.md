@@ -35,9 +35,7 @@ Choose the robot you want to use;
 
 When the robot is finished run  ```sh python3 index.py ``` again and select other robot.
 
-PS: Not tested on Windows and OS X but it may work. The possible problem could be the os.env at the analyser robot.
-
-Detailed instructions can be found below.
+_PS: Not tested on Windows and OS X but it may work. The possible problem could be the os.env at the analyser robot._
 
 ## Usage example
 
@@ -67,7 +65,7 @@ See how beautiful it became =]
 
 ![](readme_page/datastudio-Joker.jpeg)
 
-_You can acess to interact with the plots [here][datastudio]._
+_You can interact with the plots [here][datastudio]._
 
 
 ## Development setup
@@ -106,5 +104,5 @@ Please, be free to contribute, I'll appreciate it =]
 [miniconda3]: https://docs.conda.io/en/latest/miniconda.html
 [devtwitt]: https://developer.twitter.com/
 [googlec]: https://cloud.google.com/
-[datastudio]: datastudio.google.com/reporting/178c980f-040c-45ea-a77a-407c90f8e068
+[datastudio]: https://datastudio.google.com/reporting/178c980f-040c-45ea-a77a-407c90f8e068
 [mongo]: https://www.mongodb.com/download-center/community
