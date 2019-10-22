@@ -1,10 +1,11 @@
 # Sentiments' analyses towards Joker's new movie
 > Using tweepy to collect tweets, and google cloud's NLP to analyse the sentiments
 
-[![Python Version][py-image]][py-url]
+![Python Version][py-image]
 
 This project started as a playfull way to understand the process of interacting with Apis, collect data, clean it, use natural language process to label it,
-then plot in a way that we can have some conclusions about the data. It endend as a program that automatic collect, clean and language process the data.
+then plot in a way that we can have some conclusions about the data. 
+It endend as a program that automatic collect, clean and language process the data.
 
 ![](readme_page/joker.gif)
 
@@ -30,7 +31,7 @@ At [google cloud][googlec], activate the cloud natural language API and create a
 	
 Run in your console ```sh python3 index.py ``` ;
 
-Rhoose the robot you want to use;
+Choose the robot you want to use;
 
 When the robot is finished run  ```sh python3 index.py ``` again and select other robot.
 
@@ -101,7 +102,7 @@ Please, be free to contribute, I'll appreciate it =]
 5. Create a new Pull Request
 
 <!-- Markdown link & img dfn's -->
-[py-url]: https://img.shields.io/badge/python-v3.7-blue
+[py-image]: https://img.shields.io/badge/python-v3.7-blue
 [miniconda3]: https://docs.conda.io/en/latest/miniconda.html
 [devtwitt]: https://developer.twitter.com/
 [googlec]: https://cloud.google.com/
