@@ -29,11 +29,11 @@ At [twitter's development][devtwitt], activate the apikeys, and copy paste on /c
 At [google cloud][googlec], activate the cloud natural language API and create a service account,
 	after that, download the .json and paste it on /credentials;
 	
-Run in your console ```sh python3 index.py ``` ;
+Run in your console ``` python3 index.py ``` ;
 
 Choose the robot you want to use;
 
-When the robot is finished run  ```sh python3 index.py ``` again and select other robot.
+When the robot is finished run  ``` python3 index.py ``` again and select other robot.
 
 _PS: Not tested on Windows and OS X but it may work. The possible problem could be the os.env at the analyser robot._
 
