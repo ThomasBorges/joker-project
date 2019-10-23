@@ -57,7 +57,7 @@ I called robot, each part of the program:
 
 Feel free to suggest improvements, especially at the preprocessor, cause you will not get only the tweets you want.
 
-In this especific case I used Joker's new movie as a use case.
+In this especific case I used Joker's new movie as an use case.
 
 After the final csv is complete, you can use any tool to plot your data. I choose datastudio from google, cause I found it easy and intuitive to use.
 
